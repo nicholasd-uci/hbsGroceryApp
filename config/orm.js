@@ -8,7 +8,7 @@ getAll('groceries', groceries => {
 const orm = {}
 
 
-orm.create = (table,data, cb) => {
+orm.create = (table, data, cb) => {
     db.query(`INSERT INTO ${table} SET ?`, data, (err, fields) => {
         if (err) { console.log(err) }
         cb(fields.insertId)
